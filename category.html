@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category | Artisan Edit</title>
+    <meta name="description" content="Shop handcrafted artisan products by category from Artisan Edit. Filter by print techniques like Ajrakh, Applique, and Hand block printing.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ==========================================
+           CATEGORY PAGE LAYOUT
+        ========================================== */
+        .category-page-wrapper {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 0;
+            max-width: 1600px;
+            margin: var(--header-height) auto 0;
+            min-height: calc(100vh - var(--header-height));
+        }
+
+        /* ---- LEFT SIDEBAR ---- */
+        .category-sidebar {
+            position: sticky;
+            top: var(--header-height);
+            height: calc(100vh - var(--header-height));
+            overflow-y: auto;
+            background-color: var(--color-bg-secondary);
+            border-right: 1px solid var(--color-border-subtle);
+            padding: 32px 0 40px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .category-sidebar::-webkit-scrollbar { width: 4px; }
+        .category-sidebar::-webkit-scrollbar-thumb { background: var(--color-accent-primary); border-radius: 2px; }
+
+        .sidebar-back-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--color-text-muted);
+            padding: 0 24px 24px;
+            border-bottom: 1px solid var(--color-border-subtle);
+            margin-bottom: 24px;
+            transition: var(--transition-fast);
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .sidebar-back-btn:hover { color: var(--color-accent-primary); }
+
+        .sidebar-group-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: var(--color-accent-primary);
+            padding: 0 24px 10px;
+            margin-top: 8px;
+        }
+
+        .sidebar-nav-item {
+            display: block;
+            padding: 11px 24px 11px 28px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--color-text-secondary);
+            cursor: pointer;
+            border-left: 3px solid transparent;
+            transition: var(--transition-fast);
+            text-decoration: none;
+            line-height: 1.4;
+            position: relative;
+        }
+
+        .sidebar-nav-item:hover {
+            color: var(--color-text-primary);
+            background-color: rgba(203, 181, 123, 0.08);
+            border-left-color: rgba(203, 181, 123, 0.4);
+        }
+
+        .sidebar-nav-item.active {
+            color: var(--color-text-primary);
+            font-weight: 700;
+            background-color: rgba(203, 181, 123, 0.13);
+            border-left-color: var(--color-accent-primary);
+        }
+
+        .sidebar-nav-item .item-count {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.72rem;
+            color: var(--color-text-muted);
+            background: var(--color-bg-primary);
+            padding: 1px 7px;
+            border-radius: 10px;
+        }
+
+        /* ---- MAIN CONTENT AREA ---- */
+        .category-main {
+            padding: 40px 48px 80px;
+            min-width: 0;
+        }
+
+        /* Category Banner */
+        .category-header-banner {
+            position: relative;
+            height: 260px;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 36px;
+            box-shadow: 0 10px 30px rgba(44,55,41,0.1);
+        }
+
+        .category-banner-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.75);
+            transition: var(--transition-smooth);
+        }
+
+        .category-header-banner:hover .category-banner-img {
+            transform: scale(1.02);
+        }
+
+        .category-banner-content {
+            position: absolute;
+            bottom: 32px;
+            left: 40px;
+            color: #FFF;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            max-width: 600px;
+        }
+
+        .category-title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #FFF;
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .category-subtitle {
+            font-size: 0.95rem;
+            color: rgba(255,248,237,0.9);
+            line-height: 1.6;
+        }
+
+        /* Filters */
+        .filters-section {
+            margin-bottom: 32px;
+        }
+
+        .filters-label {
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-text-muted);
+            margin-bottom: 14px;
+            font-weight: 600;
+        }
+
+        .technique-filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .filter-pill {
+            padding: 8px 20px;
+            border-radius: 25px;
+            border: 1.5px solid var(--color-border-subtle);
+            background: var(--color-bg-primary);
+            color: var(--color-text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition-fast);
+            font-family: var(--font-body);
+            letter-spacing: 0.02em;
+        }
+
+        .filter-pill:hover {
+            border-color: var(--color-accent-primary);
+            color: var(--color-text-primary);
+        }
+
+        .filter-pill.active {
+            background-color: var(--color-accent-primary);
+            border-color: var(--color-accent-primary);
+            color: #FFF;
+            font-weight: 600;
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+            gap: 24px;
+        }
+
+        .product-card {
+            background-color: var(--color-bg-secondary);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--color-border-subtle);
+            transition: var(--transition-smooth);
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(44,55,41,0.12);
+        }
+
+        .product-image-container {
+            position: relative;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+        }
+
+        .product-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-smooth);
+        }
+
+        .product-card:hover .product-image-container img {
+            transform: scale(1.07);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            padding: 4px 10px;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .product-badge.technique {
+            background-color: rgba(44,55,41,0.7);
+            color: var(--color-accent-light);
+            backdrop-filter: blur(4px);
+        }
+
+        .product-info {
+            padding: 18px 18px 14px;
+        }
+
+        .product-category {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-accent-primary);
+            font-weight: 600;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .product-title {
+            font-size: 0.95rem;
+            color: var(--color-text-primary);
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: 12px;
+            font-family: var(--font-heading);
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .product-price {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--color-text-primary);
+        }
+
+        .add-to-cart-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: var(--color-accent-primary);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFF;
+            transition: var(--transition-fast);
+        }
+
+        .add-to-cart-btn:hover {
+            background-color: var(--color-accent-dark);
+            transform: scale(1.1);
+        }
+
+        .empty-state {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 80px 20px;
+            color: var(--color-text-muted);
+        }
+
+        .empty-state svg {
+            margin-bottom: 16px;
+            opacity: 0.4;
+        }
+
+        /* ---- RESPONSIVE ---- */
+        @media (max-width: 1024px) {
+            .category-page-wrapper {
+                grid-template-columns: 240px 1fr;
+            }
+            .category-main { padding: 28px 28px 60px; }
+        }
+
+        @media (max-width: 768px) {
+            .category-page-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .category-sidebar {
+                position: static;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid var(--color-border-subtle);
+                padding: 20px 0;
+                flex-direction: row;
+                flex-wrap: wrap;
+                overflow-x: auto;
+                overflow-y: visible;
+            }
+            .sidebar-back-btn {
+                padding: 0 16px 16px;
+                border-bottom: none;
+                width: 100%;
+            }
+            .sidebar-group-label {
+                padding: 4px 16px;
+                white-space: nowrap;
+            }
+            .sidebar-nav-item {
+                padding: 8px 16px;
+                white-space: nowrap;
+                border-left: none;
+                border-bottom: 3px solid transparent;
+            }
+            .sidebar-nav-item.active {
+                border-left-color: transparent;
+                border-bottom-color: var(--color-accent-primary);
+            }
+            .sidebar-nav-item .item-count { display: none; }
+            .category-main { padding: 24px 20px 60px; }
+            .category-header-banner { height: 180px; }
+            .category-title { font-size: 1.7rem; }
+            .products-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-brand">
+            <img src="assets/artisans-edit-logo.png" alt="Artisans Edit Logo" class="brand-logo-img">
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#clickpoint-banner" class="nav-link">Craft Spaces</a></li>
+                <li><a href="index.html#about-us" class="nav-link">Our Story</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <button class="icon-btn" aria-label="Search Collection">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                </svg>
+            </button>
+            <button class="icon-btn" aria-label="Shopping Cart">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                </svg>
+                <span class="cart-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="category-page-wrapper">
+
+        <!-- LEFT SIDEBAR -->
+        <aside class="category-sidebar" id="category-sidebar">
+            <a href="index.html#clickpoint-banner" class="sidebar-back-btn">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                </svg>
+                Back to Craft Spaces
+            </a>
+            <!-- Nav items injected by JS -->
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="category-main">
+
+            <!-- Category Banner -->
+            <div class="category-header-banner">
+                <img id="category-banner-img" src="assets/home_furnishing_scene.png" alt="Category Banner" class="category-banner-img">
+                <div class="category-banner-content">
+                    <h1 class="category-title" id="category-title">Loading...</h1>
+                    <p class="category-subtitle" id="category-subtitle"></p>
+                </div>
+            </div>
+
+            <!-- Technique Filters -->
+            <section class="filters-section">
+                <p class="filters-label">Filter by Print &amp; Technique:</p>
+                <div class="technique-filter-bar" id="technique-filter-bar"></div>
+            </section>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="category-products-grid"></div>
+
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-logo">Artisan Edit.</h3>
+                <p class="footer-desc">Premium handcrafted apparel and home furnishings focusing on heritage craft conservation and sustainable luxury.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Explore</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#clickpoint-banner">Craft Spaces</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Collections</h4>
+                <ul class="footer-links">
+                    <li><a href="category.html?type=bedsheet">Bedcovers</a></li>
+                    <li><a href="category.html?type=curtain">Linen Curtains</a></li>
+                    <li><a href="category.html?type=saree">Traditional Sarees</a></li>
+                    <li><a href="category.html?type=dining">Dining Tableware</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Artisanal Crafts</h4>
+                <ul class="footer-links">
+                    <li><a href="category.html?type=suits">Ajrakh Prints</a></li>
+                    <li><a href="category.html?type=curtain">Applique Needlework</a></li>
+                    <li><a href="category.html?type=bedsheet">Jaipuri Block Prints</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Artisan Edit. Crafted with respect for traditional heritage and conscious slow design.</p>
+        </div>
+    </footer>
+
+    <script src="category.js"></script>
+</body>
+</html>

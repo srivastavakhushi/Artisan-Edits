@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artisan Edit | Exquisite Handcrafted Apparel & Furnishings</title>
+    <meta name="description" content="Explore Artisan Edit, a premium boutique for hand block prints, Applique work, Ajrakh, and traditional handloom fabrics. Exquisite home furnishings, wearables, and accessories.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="header-brand">
+            <img src="assets/artisans-edit-logo.png" alt="Artisans Edit Logo" class="brand-logo-img">
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link active">Home</a></li>
+                <li><a href="#clickpoint-banner" class="nav-link">Craft Spaces</a></li>
+                <li><a href="#about-us" class="nav-link">Our Story</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <button class="icon-btn" aria-label="Search Collection">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                </svg>
+            </button>
+            <button class="icon-btn" aria-label="Shopping Cart">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                </svg>
+                <span class="cart-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        
+        <!-- Hero Section: Left Circular Menu + Right Sliding Banner -->
+        <section class="hero-section">
+            
+            <!-- Left Circular Menu -->
+            <div class="circular-menu-container">
+                <h3 class="circular-menu-title">Artisan Categories</h3>
+                <div class="circular-menu-items">
+                    <button class="menu-circle-item active" aria-label="View Suits Artwork">
+                        <div class="circle-img-wrapper">
+                            <img src="assets/suit_artwork.png" alt="Suits artwork preview">
+                        </div>
+                        <span class="circle-label">Suits</span>
+                    </button>
+                    <button class="menu-circle-item" aria-label="View Curtains Artwork">
+                        <div class="circle-img-wrapper">
+                            <img src="assets/curtain_artwork.png" alt="Curtains artwork preview">
+                        </div>
+                        <span class="circle-label">Curtains</span>
+                    </button>
+                    <button class="menu-circle-item" aria-label="View Bedsheets Artwork">
+                        <div class="circle-img-wrapper">
+                            <img src="assets/bedsheet_artwork.png" alt="Bedsheets artwork preview">
+                        </div>
+                        <span class="circle-label">Bedsheets</span>
+                    </button>
+                    <button class="menu-circle-item" aria-label="View Bottles Artwork">
+                        <div class="circle-img-wrapper">
+                            <img src="assets/bottle_artwork.png" alt="Bottles artwork preview">
+                        </div>
+                        <span class="circle-label">Bottles</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Sliding Hero Banner -->
+            <div class="hero-slider-container">
+                <div class="hero-slider">
+                    <!-- Slide 1: Suits -->
+                    <div class="hero-slide active">
+                        <img src="assets/suit_artwork.png" alt="Exquisite hand-blocked suit fabric" class="slide-img">
+                        <div class="slide-content">
+                            <span class="slide-tag">Heritage Textile</span>
+                            <h2 class="slide-title">Ajrakh & block print suits</h2>
+                            <p class="slide-description">Rich organic dyes carved on wooden blocks, carrying the signature indigo and madder red geometric patterns.</p>
+                            <a href="category.html?type=suits" class="slide-btn">Shop Suits</a>
+                        </div>
+                    </div>
+                    <!-- Slide 2: Curtains -->
+                    <div class="hero-slide">
+                        <img src="assets/curtain_artwork.png" alt="Applique work linen curtain" class="slide-img">
+                        <div class="slide-content">
+                            <span class="slide-tag">Home Furnishing</span>
+                            <h2 class="slide-title">Delicate Applique Curtains</h2>
+                            <p class="slide-description">Premium linens intricately finished with traditional applique designs that light up your windows with custom elegance.</p>
+                            <a href="category.html?type=curtain" class="slide-btn">Shop Curtains</a>
+                        </div>
+                    </div>
+                    <!-- Slide 3: Bedsheets -->
+                    <div class="hero-slide">
+                        <img src="assets/bedsheet_artwork.png" alt="Jaipuri block print bedsheet" class="slide-img">
+                        <div class="slide-content">
+                            <span class="slide-tag">Bed Linen</span>
+                            <h2 class="slide-title">Hand Block Bedsheets</h2>
+                            <p class="slide-description">Experience the softest handwoven cotton bedsheets printed by hand block artisans in Jaipuri bootis and lattices.</p>
+                            <a href="category.html?type=bedsheet" class="slide-btn">Shop Bedsheets</a>
+                        </div>
+                    </div>
+                    <!-- Slide 4: Bottles -->
+                    <div class="hero-slide">
+                        <img src="assets/bottle_artwork.png" alt="Artisanal hand-painted pottery bottles" class="slide-img">
+                        <div class="slide-content">
+                            <span class="slide-tag">Eco Decor</span>
+                            <h2 class="slide-title">Hand-painted Bottles</h2>
+                            <p class="slide-description">Earthy terracotta and copper bottles, hand-painted with detailed folk art. Perfect for sustainable styling.</p>
+                            <a href="category.html?type=dining" class="slide-btn">Shop Pottery</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slider Navigation Buttons -->
+                <button class="slider-control-btn prev-btn" aria-label="Previous Slide">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path d="M15 19l-7-7 7-7"/>
+                    </svg>
+                </button>
+                <button class="slider-control-btn next-btn" aria-label="Next Slide">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path d="M9 5l7 7-7 7"/>
+                    </svg>
+                </button>
+
+                <!-- Slider Dots -->
+                <div class="slider-dots"></div>
+            </div>
+
+        </section>
+
+        <!-- Clickpoints Banner Section -->
+        <section class="clickpoint-banner-section" id="clickpoint-banner">
+            <div class="section-header">
+                <span class="section-label">Interactive Spaces</span>
+                <h2 class="section-title">Explore by Space & Category</h2>
+                <p class="section-subtitle">Discover the techniques behind our designs. Click on any pulsing hotspot inside the scenes to reveal details, craft stories, and view curated pieces.</p>
+            </div>
+
+            <!-- Sliding Clickpoint Container -->
+            <div class="clickpoints-slider-container">
+                <div class="clickpoints-slider-inner">
+                    
+                    <!-- Slide 1: Home Furnishing -->
+                    <div class="clickpoint-slide">
+                        <img src="assets/home_furnishing_scene.png" alt="Home furnishing space styling room" class="clickpoint-slide-img">
+                        <div class="clickpoint-slide-overlay"></div>
+
+                        <!-- Hotspots for Home Furnishing -->
+                        
+                        <!-- 1. Bedsheet/BedCover (on the bed) -->
+                        <div class="hotspot-wrapper" style="top: 62.3%; left: 32.3%;">
+                            <button class="hotspot" data-hotspot="bedsheet" aria-label="Explore Bedsheet & BedCovers">
+                                <span class="hotspot-dot"></span>
+                                <span class="hotspot-ripple"></span>
+                                <span class="hotspot-ripple-2"></span>
+                            </button>
+                            <div class="hotspot-popover">
+                                <h4 class="popover-title">Bedsheet / BedCover</h4>
+                                <p class="popover-desc">Artisan Techniques</p>
+                                <div class="popover-techniques">
+                                    <span class="popover-tech-badge">Ajrakh</span>
+                                    <span class="popover-tech-badge">Applique</span>
+                                    <span class="popover-tech-badge">Hand Block</span>
+                                    <span class="popover-tech-badge">Kids Print</span>
+                                </div>
+                                <a href="category.html?type=bedsheet" class="popover-btn">Shop Now</a>
+                            </div>
+                        </div>
+
+                        <!-- 2. Quilt/Dohar (folded quilts on the bed) -->
+                        <div class="hotspot-wrapper" style="top: 52.1%; left: 41.8%;">
+                            <button class="hotspot" data-hotspot="quilt" aria-label="Explore Dohars & Quilts">
+                                <span class="hotspot-dot"></span>
+                                <span class="hotspot-ripple"></span>
+                                <span class="hotspot-ripple-2"></span>
+                            </button>
+                            <div class="hotspot-popover">
+                                <h4 class="popover-title">Dohar / Quilt</h4>
+                                <p class="popover-desc">Artisan Techniques</p>
+                                <div class="popover-techniques">
+                                    <span class="popover-tech-badge">Handblock/Jaipuri</span>
+                                </div>
+                                <a href="category.html?type=quilt" class="popover-btn">Shop Now</a>
+                            </div>
+                        </div>
+
+                        <!-- 3. Curtain (on the right curtain) -->
+                        <div class="hotspot-wrapper" style="top: 25.2%; left: 69.1%;">
+                            <button class="hotspot" data-hotspot="curtain" aria-label="Explore Curtains">
+                                <span class="hotspot-dot"></span>
+                                <span class="hotspot-ripple"></span>
+                                <span class="hotspot-ripple-2"></span>
+                            </button>
+                            <div class="hotspot-popover">
+                                <h4 class="popover-title">Curtain</h4>
+                                <p class="popover-desc">Artisan Techniques</p>
+                                <div class="popover-techniques">
+                                    <span class="popover-tech-badge">Applique</span>
+                                    <span class="popover-tech-badge">Hand Block</span>
+                                    <span class="popover-tech-badge">Kids Print</span>
+                                </div>
+                                <a href="category.html?type=curtain" class="popover-btn">Shop Now</a>
+                            </div>
+                        </div>
+
+                        <!-- 4. Sofa Throw (on armchair throw) -->
+                        <div class="hotspot-wrapper" style="top: 63.8%; left: 64.8%;">
+                            <button class="hotspot" data-hotspot="throw" aria-label="Explore Sofa Throws">
+                                <span class="hotspot-dot"></span>
+                                <span class="hotspot-ripple"></span>
+                                <span class="hotspot-ripple-2"></span>
+                            </button>
+                            <div class="hotspot-popover">
+                                <h4 class="popover-title">Sofa Throw</h4>
+                                <p class="popover-desc">Artisan Techniques</p>
+                                <div class="popover-techniques">
+                                    <span class="popover-tech-badge">Handloom</span>
+                                    <span class="popover-tech-badge">Hand Block</span>
+                                    <span class="popover-tech-badge">Hand Tufted/Bohemian</span>
+                                </div>
+                                <a href="category.html?type=throw" class="popover-btn">Shop Now</a>
+                            </div>
+                        </div>
+
+                        <!-- 5. Cushion Cover (on armchair cushion) -->
+                        <div class="hotspot-wrapper" style="top: 49.9%; left: 56.2%;">
+                            <button class="hotspot" data-hotspot="cushion" aria-label="Explore Cushion Covers">
+                                <span class="hotspot-dot"></span>
+                                <span class="hotspot-ripple"></span>
+                                <span class="hotspot-ripple-2"></span>
+                            </button>
+                            <div class="hotspot-popover">
+                                <h4 class="popover-title">Cushion Cover</h4>
+                                <p class="popover-desc">Artisan Techniques</p>
+                                <div class="popover-techniques">
+                                    <span class="popover-tech-badge">Applique</span>
+                                    <span class="popover-tech-badge">Hand Block</span>
+                                    <span class="popover-tech-badge">Hand Tufted / Bohemian</span>
+                                </div>
+                                <a href="category.html?type=cushion" class="popover-btn">Shop Now</a>
+                            </div>
+                        </div>
+
+                        <!-- 6. Dining Mat/Runner (on dining table) -->
+                        <div class="hotspot-wrapper" style="top: 79.0%; left: 90.3%;">
+                            <button class="hotspot" data-hotspot="dining" aria-label="Explore Dining Tableware">
+                                <span class="hotspot-dot"></span>
+                                <span class="hotspot-ripple"></span>
+                                <span class="hotspot-ripple-2"></span>
+                            </button>
+                            <div class="hotspot-popover">
+                                <h4 class="popover-title">Dining Mat / Runner</h4>
+                                <p class="popover-desc">Artisan Techniques</p>
+                                <div class="popover-techniques">
+                                    <span class="popover-tech-badge">Applique</span>
+                                    <span class="popover-tech-badge">Handblock</span>
+                                </div>
+                                <a href="category.html?type=dining" class="popover-btn">Shop Now</a>
+                            </div>
+                        </div>
+
+                        <!-- 7. Carpet/Mat (on carpet) -->
+                        <div class="hotspot-wrapper" style="top: 82.1%; left: 14.5%;">
+                            <button class="hotspot" data-hotspot="carpet" aria-label="Explore Carpets & Rugs">
+                                <span class="hotspot-dot"></span>
+                                <span class="hotspot-ripple"></span>
+                                <span class="hotspot-ripple-2"></span>
+                            </button>
+                            <div class="hotspot-popover">
+                                <h4 class="popover-title">Carpet / Mat</h4>
+                                <p class="popover-desc">Artisan Techniques</p>
+                                <div class="popover-techniques">
+                                    <span class="popover-tech-badge">Kilim</span>
+                                    <span class="popover-tech-badge">Handloom Yoga Mat</span>
+                                    <span class="popover-tech-badge">Kitchen Runner</span>
+                                    <span class="popover-tech-badge">Handblock</span>
+                                </div>
+                                <a href="category.html?type=carpet" class="popover-btn">Shop Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: Wearables & Accessories -->
+                    <div class="clickpoint-slide">
+                        <img src="assets/wearables_scene.png" alt="Luxury fashion studio flatlay and garments" class="clickpoint-slide-img">
+                        <div class="clickpoint-slide-overlay"></div>
+
+                        <!-- Hotspots for Wearables -->
+                        
+                        <!-- 1. Kids (on the kids sitting in the chair) -->
+                        <button class="hotspot" style="top: 69.6%; left: 22.8%;" data-hotspot="kids" aria-label="Explore Kids Wear">
+                            <span class="hotspot-dot"></span>
+                            <span class="hotspot-ripple"></span>
+                            <span class="hotspot-ripple-2"></span>
+                        </button>
+                        
+                        <!-- 2. Laptop bags (on the man's shoulder bag) -->
+                        <button class="hotspot" style="top: 48.7%; left: 38.7%;" data-hotspot="laptopbags" aria-label="Explore Laptop Bags">
+                            <span class="hotspot-dot"></span>
+                            <span class="hotspot-ripple"></span>
+                            <span class="hotspot-ripple-2"></span>
+                        </button>
+
+                        <!-- 3. Men's (on the man's kurta/shirt) -->
+                        <button class="hotspot" style="top: 46.7%; left: 46.7%;" data-hotspot="mens" aria-label="Explore Men's Wear">
+                            <span class="hotspot-dot"></span>
+                            <span class="hotspot-ripple"></span>
+                            <span class="hotspot-ripple-2"></span>
+                        </button>
+
+                        <!-- 4. Sarees (on the woman's saree) -->
+                        <button class="hotspot" style="top: 51.2%; left: 58.4%;" data-hotspot="saree" aria-label="Explore Sarees">
+                            <span class="hotspot-dot"></span>
+                            <span class="hotspot-ripple"></span>
+                            <span class="hotspot-ripple-2"></span>
+                        </button>
+
+                        <!-- 5. Jewellery (on the woman's necklace) -->
+                        <button class="hotspot" style="top: 30.6%; left: 59.5%;" data-hotspot="jewellery" aria-label="Explore Jewellery">
+                            <span class="hotspot-dot"></span>
+                            <span class="hotspot-ripple"></span>
+                            <span class="hotspot-ripple-2"></span>
+                        </button>
+
+                        <!-- 6. Women Dresses (on the woman's lavender dress) -->
+                        <button class="hotspot" style="top: 52.0%; left: 73.1%;" data-hotspot="dresses" aria-label="Explore Women Dresses">
+                            <span class="hotspot-dot"></span>
+                            <span class="hotspot-ripple"></span>
+                            <span class="hotspot-ripple-2"></span>
+                        </button>
+
+                        <!-- 7. Dress Materials/Suits (on the woman's shoulder, right) -->
+                        <button class="hotspot" style="top: 32.8%; left: 85.5%;" data-hotspot="suits" aria-label="Explore Dress Materials & Suits">
+                            <span class="hotspot-dot"></span>
+                            <span class="hotspot-ripple"></span>
+                            <span class="hotspot-ripple-2"></span>
+                        </button>
+
+                        <!-- 8. Handbags (on the red handbag) -->
+                        <button class="hotspot" style="top: 50.9%; left: 85.7%;" data-hotspot="handbags" aria-label="Explore Handbags">
+                            <span class="hotspot-dot"></span>
+                            <span class="hotspot-ripple"></span>
+                            <span class="hotspot-ripple-2"></span>
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- REMOVED: Bottom navigation tabs that were causing overlap -->
+                <!-- Navigation is now controlled by the progress bar only -->
+
+            </div>
+
+            <!-- Subcategories Menu Removed -->
+        </section>
+
+        <!-- Brand Story Section -->
+        <section class="brand-story-section" id="about-us">
+            <div class="brand-story-inner">
+                <span class="section-label">The Heritage</span>
+                <h2 class="section-title">The Story of Artisan Edit</h2>
+                <p class="brand-story-quote">
+                    "We seek to bridge the gap between traditional craft techniques and modern contemporary aesthetics, creating a home space and apparel collection that is warm, authentic, and conscious."
+                </p>
+                <p class="brand-story-body">
+                    Every single thread of applique, every print of our Ajrakh block, and every glaze on our painted bottles is created by hand by master craftsmen across India. We believe in slow design, fair practices, and keeping ancient heritage arts thriving in our homes today.
+                </p>
+                <div class="brand-story-cta">
+                    <a href="#clickpoint-banner" class="slide-btn">Explore Crafts</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-logo">Artisan Edit.</h3>
+                <p class="footer-desc">Premium handcrafted apparel and home furnishings focusing on heritage craft conservation and sustainable luxury.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Explore</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#clickpoint-banner">Craft Spaces</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Collections</h4>
+                <ul class="footer-links">
+                    <li><a href="category.html?type=bedsheet">Bedcovers</a></li>
+                    <li><a href="category.html?type=curtain">Linen Curtains</a></li>
+                    <li><a href="category.html?type=saree">Traditional Sarees</a></li>
+                    <li><a href="category.html?type=dining">Dining Tableware</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Artisanal Crafts</h4>
+                <ul class="footer-links">
+                    <li><a href="category.html?type=suits">Ajrakh Prints</a></li>
+                    <li><a href="category.html?type=curtain">Applique Needlework</a></li>
+                    <li><a href="category.html?type=bedsheet">Jaipuri Block Prints</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Artisan Edit. Crafted with respect for traditional heritage and conscious slow design.</p>
+        </div>
+    </footer>
+
+    <!-- App Script -->
+    <script src="app.js"></script>
+</body>
+</html>
